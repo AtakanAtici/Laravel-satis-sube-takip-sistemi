@@ -56,11 +56,11 @@ Rol numaraları:
  ?>
 
 
-
-
+<!--
 <footer class="footer">
  
 </footer>
+-->
    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
    <script src="{{asset('js/app.js')}}" defer></script>
 

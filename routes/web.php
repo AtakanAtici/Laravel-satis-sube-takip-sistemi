@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'homeController@showHompage')->name('hompage');
+
+//Setup GET
+Route::get('/kurulum', 'setupController@showSetupWelcome')->name('show.setup.welcome');
+Route::get('/kurulum/yonetici-ekle', 'setupController@showAddFirstManager')->name('show.setup.addFirstManager');
+Route::get('/kurulum/firma-bilgileri', 'setupController@showAddCompany')->name('show.setup.addCompany');
+Route::get('/kurulum/kurulumu-bitir', 'setupController@showSetupDone')->name('show.setup.done');
+
+//Setup POST
+Route::post('/kurulum/kullanici-ekle', 'setupController@addFirstManager')->name('setup.addFirstManager');
+Route::post('/kurulum/firma-bilgileri-ekle', 'setupController@addCompany')->name('setup.addCompany');

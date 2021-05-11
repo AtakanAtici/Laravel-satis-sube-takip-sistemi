@@ -24,3 +24,9 @@ Route::get('/kurulum/kurulumu-bitir', 'setupController@showSetupDone')->name('sh
 //Setup POST
 Route::post('/kurulum/kullanici-ekle', 'setupController@addFirstManager')->name('setup.addFirstManager');
 Route::post('/kurulum/firma-bilgileri-ekle', 'setupController@addCompany')->name('setup.addCompany');
+
+
+//Login GET
+Route::get('/giris-yap', 'authController@showLogin')->name('show.login');
+//Login POST
+Route::post('/giris', 'authController@login')->name('login');

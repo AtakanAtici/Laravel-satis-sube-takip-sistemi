@@ -8,12 +8,24 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class setupController extends Controller
 {
 	public function showSetupWelcome()
 	{
-		return view('setup.welcome');
+		$companyInfo = company::find(1);
+        if($companyInfo == null)
+        {
+            return redirect('kurulum');
+        }
+        else
+        {
+            Alert::warning('Kurulum Yapıldı', 'Kurulumu daha önce yaptınız, destek için sistem yöneticisi ile iletişime geçin.');
+            return redirect('/giris-yap');
+        }
+        
+		
 	}
     public function showAddFirstManager()
     {

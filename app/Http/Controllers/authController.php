@@ -18,8 +18,8 @@ class authController extends Controller
 
     function login(Request $request)
     {
-
-    	 if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        $remember = $request->remember;
+    	 if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
             $passH = Hash::make($request->password);
             $email = $request->email;
             $userInfo = User::query()

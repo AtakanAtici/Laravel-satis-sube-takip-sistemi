@@ -42,6 +42,14 @@ body {
           <input type="password" name="password" class="form-control" id="password" placeholder="Şifreniz">
           <label  for="floatingPassword">Şifre</label>
         </div>
+        
+         <div style="margin-bottom: 10px" class="form-check">
+              <input class="form-check-input" name="remember" type="checkbox" id="flexCheckDefault">
+              <label style="float:left; " class="form-check-label" for="flexCheckDefault">
+               Beni hatırla
+              </label>
+          </div>
+        
         <input type="button" id="btnLogin" class="w-100 btn btn-lg btn-primary" value="Giriş Yap"></input>
 
      </form>

@@ -21,15 +21,18 @@ class homeController extends Controller
         }
         else
         {
-            $user = Auth::user();
-        if ($user == null) {
-            return redirect('/giris-yap');
-        }
-        else
-        {
-            return view('hompage');
-        }
+                $user = Auth::user();
+            if ($user == null) 
+            {
+                return redirect('/giris-yap');
+            }
+            else
+            {
+                return view('hompage');
+            }
         }
         
     }
+
+   
 }

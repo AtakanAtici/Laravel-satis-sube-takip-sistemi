@@ -162,6 +162,46 @@
     background-color: #00194A;
     height: 10px;
 }
+.tablo{
+    margin-top: 50px;
+}
+.t-head{
+    background-color: #00194A;
+}
+.t-head-item{
+    color:#fff;
+}
+.btn-addNew{
+    float:right;
+}
+
+.headline-text{
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+}
+.layoutHead{
+    background-color: #00194A;
+    height: 8px;
+   
+}
+.layoutBody{
+    
+}
+.layoutFotter{
+    margin:20px 20px;
+    float: right;
+}
+.hucregrup{
+    margin-top:15px;
+    padding: 8px 8px;
+}
+.btnFooter{
+    
+}
+.btnFooterText{
+    margin-left:5px;
+    font-family: 'Times New Roman', Times, serif;
+}
 @media only screen and (max-width: 1000px)
 {
     .settings{

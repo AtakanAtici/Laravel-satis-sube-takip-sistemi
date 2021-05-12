@@ -31,3 +31,4 @@ Route::get('/giris-yap', 'authController@showLogin')->name('show.login');
 Route::get('/cikis', 'authController@logout')->name('logout');
 //Auth POST
 Route::post('/giris', 'authController@login')->name('login');
+

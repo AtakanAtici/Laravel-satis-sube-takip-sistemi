@@ -39,6 +39,7 @@ Route::post('/giris', 'authController@login')->name('login');
 Route::prefix('/subeler')->group(function ()
 {
 	Route::get('/', 'branchController@showBranches')->name('show.branchList');
-	Route::get('/yeni-sube-ekle', 'branchController@addNewBranch')->name('add.branch');
+	Route::get('/yeni-sube-ekle', 'branchController@addNewBranchShow')->name('show.add.branch');
+	Route::post('/sube-ekle', 'branchController@addNewBranch')->name('add.branch');
 });
 

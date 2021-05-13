@@ -21,7 +21,7 @@
 			@yield('headLine')
 		</h2>
 		
-			<button type="button" class="btn btn-success btn-addNew">@yield('btnValue') </button>
+			@yield('btnValue') 
 		
 	</div>
   @yield('content')

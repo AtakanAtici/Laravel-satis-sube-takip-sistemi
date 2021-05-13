@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('sweetAlert/sweetalert2.css')}}">
     @yield('css')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
@@ -18,12 +19,13 @@
 @include('layouts.header')
 	<div class="container headline">
 		<h2 style="position: relative;" class="headline-text pt-2">
-			@yield('headline')
+			@yield('headLine')
 		</h2>
 	</div>
 
-  
-  <div class="container">
+  @yield('content')
+  <!-- Form
+<div class="container">
     <div class="layoutHead"></div>
     <div class="layoutBody">
       <div class="form formAdd">
@@ -83,6 +85,7 @@
     </div>
     
   </div>
+   -->
 
 <!--
 <footer class="footer">
@@ -91,6 +94,7 @@
 -->
    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
    <script src="{{asset('js/app.js')}}" defer></script>
+     <script src="{{asset('sweetAlert/sweetalert2.js')}}" defer></script>
    @yield('js')
 
    

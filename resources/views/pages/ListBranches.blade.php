@@ -13,7 +13,9 @@
 @endsection
 
 @section('btnValue')
-Yeni Şube ekle
+<a href="{{ route('show.add.branch') }}">
+<button type="button" class="btn btn-success btn-addNew"> Yeni Şube Ekle </button>
+</a>
 @endsection
 
 @section('content')

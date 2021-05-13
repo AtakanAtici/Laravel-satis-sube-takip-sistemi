@@ -202,6 +202,11 @@
     margin-left:5px;
     font-family: 'Times New Roman', Times, serif;
 }
+.btnImg{
+    width: 20px;
+    height: 20px;
+    margin-left:20%;
+}
 @media only screen and (max-width: 1000px)
 {
     .settings{

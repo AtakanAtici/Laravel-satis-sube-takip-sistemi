@@ -32,3 +32,13 @@ Route::get('/cikis', 'authController@logout')->name('logout');
 //Auth POST
 Route::post('/giris', 'authController@login')->name('login');
 
+
+//Pages GET
+
+
+Route::prefix('/subeler')->group(function ()
+{
+	Route::get('/', 'branchController@showBranches')->name('show.branchList');
+	Route::get('/yeni-sube-ekle', 'branchController@addNewBranch')->name('add.branch');
+});
+

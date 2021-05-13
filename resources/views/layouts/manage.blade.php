@@ -18,14 +18,18 @@
 @include('layouts.header')
 	<div class="container headline mt-1">
 		<h2 class="headline-text">
-			@yield('headline')
+			@yield('headLine')
 		</h2>
 		
-			<button type="button" class="btn btn-success btn-addNew">@yield('btnContent') </button>
+			<button type="button" class="btn btn-success btn-addNew">@yield('btnValue') </button>
 		
 	</div>
+  @yield('content')
+
+
+<!-- Örnek
 <div class="container tablo table-responsive">
-	<table class="table">
+  <table class="table">
   <thead class="thead t-head">
     <tr>
       <th scope="col" class="t-head-item">#</th>
@@ -51,6 +55,7 @@
   </tbody>
 </table>
 </div>
+-->
 
 <!--
 <footer class="footer">

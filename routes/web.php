@@ -64,3 +64,12 @@ Route::prefix('/musteriler')->group(function (){
 	Route::get('/duzenle', 'customerController@showEdit')->name('show.edit.customer');
 	Route::post('/musteri-duzenle', 'customerController@edit')->name('edit.customer');
 });
+
+Route::prefix('/notlar')->group(function (){
+	Route::get('/', 'notesController@showNotes')->name('show.notes');
+	Route::get('/oku', 'notesController@readNote')->name('read.notes');
+});
+
+Route::prefix('/satıslar')->group(function (){
+	Route::get('/', 'salesController@showSales')->name('show.sales');
+});

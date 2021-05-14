@@ -11,4 +11,5 @@ class Notes extends Model
 
     protected $table ='notes';
     protected $fillable = ['senderID', 'to_roleID', 'subject', 'note'];
+
 }

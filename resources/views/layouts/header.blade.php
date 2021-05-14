@@ -1,3 +1,4 @@
+@include('sweetalert::alert')
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img width="120px" height="40px" src="{{ asset('img/logo.png') }}" alt=""></a>

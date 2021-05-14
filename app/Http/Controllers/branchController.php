@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Branch;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class branchController extends Controller
 {
@@ -18,8 +19,10 @@ class branchController extends Controller
 
     	return view('pages.AddBranch', compact('branchNo'));
     }
+
     function addNewBranch(Request $request)
     {
+
     	$AddBranch = [
     		'name' => $request->name,
     		'author_name' => $request->author_name,
@@ -33,6 +36,13 @@ class branchController extends Controller
 
     	Branch::create($AddBranch);
     	return redirect('/subeler/');
+    }
+
+    function deleteBranch(Request $request)
+    {
+    	$id = $request->branchNo;
+    	Branch::where('branch_no',$id)->delete();
+        return response()->json([], 200);
     }
 
 

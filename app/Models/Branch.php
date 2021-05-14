@@ -10,5 +10,5 @@ class Branch extends Model
     use HasFactory;
 
     protected $table ='branches';
-    protected $fillable = ['name', 'tel_no', 'adress', 'author_name', 'author_tel' ];
+    protected $fillable = ['branch_no', 'name', 'tel_no','email', 'adress', 'start_date' , 'author_name', 'author_tel' ];
 }

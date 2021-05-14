@@ -1,7 +1,7 @@
 @include('sweetalert::alert')
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img width="120px" height="40px" src="{{ asset('img/logo.png') }}" alt=""></a>
+    <a class="navbar-brand" href="{{ route('hompage') }}"><img width="120px" height="40px" src="{{ asset('img/logo.png') }}" alt=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon no-border "><img src="{{ asset('img/icons/menu-white.png') }}" alt="toggle"></span>
     </button>

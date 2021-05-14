@@ -46,3 +46,8 @@ Route::prefix('/subeler')->group(function ()
 	Route::post('/duzenle' ,'branchController@edit')->name('edit.branch');
 });
 
+Route::prefix('/personel')->group(function ()
+{
+	Route::get('/', 'personnelController@showList')->name('show.personnelList');
+});
+

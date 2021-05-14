@@ -24,6 +24,7 @@
 	<table class="table">
   <thead class="thead t-head text-center">
     <tr>
+      <th scope="col" class="t-head-item">Şube No.</th>
       <th scope="col" class="t-head-item">Şube Adı</th>
       <th scope="col" class="t-head-item">Telefon</th>
       <th scope="col" class="t-head-item">Adres</th>
@@ -37,7 +38,9 @@
     
   	@foreach($list as $item)
     <tr>
+      <td>{{ $item->branch_no }}</td>
       <th scope="row">{{ $item->name }}</th>
+
       <td><a href="tel:{{ $item->tel_no }}">{{ $item->tel_no }}</a></td>
       <td>{{ Str::limit($item->adress, 20) }}</td>
       <td>{{ $item->author_name }}</td>
@@ -68,7 +71,7 @@
             let branchNo = $(this).attr('data-id');
             Swal.fire({
                 title: "Emin Misiniz?",
-                text: branchNo  + " Şube bilgisini silmek istiyor musunuz?",
+                text: branchNo  + " nolu şube bilgisini silmek istiyor musunuz?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

@@ -56,3 +56,6 @@ Route::prefix('/personel')->group(function ()
 	Route::post('/duzenle', 'personnelController@edit')->name('edit.personnel');
 });
 
+Route::prefix('/musteriler')->group(function (){
+	Route::get('/', 'customerController@showCustomer')->name('show.customer');
+});

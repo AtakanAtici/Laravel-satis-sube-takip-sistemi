@@ -10,7 +10,7 @@
 @endsection
 
 @section('headLine')
-Şube Yönetimi
+	Müşteri Yönetimi
 @endsection
 
 @section('btnValue')
@@ -68,7 +68,7 @@
             let customerNo = $(this).attr('data-id');
             Swal.fire({
                 title: "Emin Misiniz?",
-                text: customerNo  + " nolu şube bilgisini silmek istiyor musunuz?",
+                text: customerNo  + " nolu müşteri bilgisini silmek istiyor musunuz?",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -78,8 +78,8 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        url: "{{ route('delete.branch') }}",
-                        type: "POST",
+                        url: "{{ route('delete.customer') }}",
+                        type: "GET",
                         async: false,
                         data: {
                             customerNo : customerNo
@@ -99,7 +99,7 @@
                         {
                             Swal.fire({
                                 icon: 'eroor',
-                                title: 'Başarılı',
+                                title: 'Başarısız',
                                 text: 'Silme İşlemi Başarısız',
                                 confirmButtonText:'Tamam'
                             });

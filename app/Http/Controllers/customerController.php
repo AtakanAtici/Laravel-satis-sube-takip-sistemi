@@ -12,4 +12,12 @@ class customerController extends Controller
     	$customer = Customer::all();
     	return view('pages.ListCustomer', compact('customer'));
     }
+     function delete(Request $request)
+    {
+    	$id = $request->customerNo;
+    	Customer::where('customer_no',$id)->delete();
+        return response()->json([], 200);
+    }
+
+    
 }

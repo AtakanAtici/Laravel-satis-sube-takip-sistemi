@@ -36,8 +36,8 @@ Personel Yönetimi
     
   	@foreach($user as $item)
     <tr>
-      <td scope="row">{{ $item->prsnl_no }}</td>
-      <th >{{ $item->name }}</th>
+      <th scope="row">{{ $item->prsnl_no }}</td>
+      <td >{{ $item->name }}</th>
 
       <td><a href="tel:{{ $item->tel_no }}">{{ $item->tel_no }}</a></td>
       <?php

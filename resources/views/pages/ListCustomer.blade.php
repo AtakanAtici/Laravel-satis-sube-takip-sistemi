@@ -14,7 +14,7 @@
 @endsection
 
 @section('btnValue')
-<a href="{{ route('show.add.branch') }}">
+<a href="{{ route('show.add.customer') }}">
 <button type="button" class="btn btn-success btn-addNew"> Yeni Müşteri Ekle </button>
 </a>
 @endsection

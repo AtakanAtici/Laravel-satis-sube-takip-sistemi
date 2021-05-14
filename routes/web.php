@@ -59,4 +59,6 @@ Route::prefix('/personel')->group(function ()
 Route::prefix('/musteriler')->group(function (){
 	Route::get('/', 'customerController@showCustomer')->name('show.customer');
 	Route::get('/sil', 'customerController@delete')->name('delete.customer');
+	Route::get('/musteri-ekle', 'customerController@showAdd')->name('show.add.customer');
+	Route::post('/ekle', 'customerController@addCustomer')->name('add.customer');
 });

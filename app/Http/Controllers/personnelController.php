@@ -23,6 +23,36 @@ class personnelController extends Controller
     {
         return view('pages.AddPersonnel');
     }
+    public function showEdit(Request $request)
+    {
+        $id = $request->id;
+        $personnel = User::find($id);
+        return view('pages.EditPersonnel', compact('personnel'));
+    }
+    public function edit(Request $request)
+    {
+        $id = $request->id;
+        $password = $request->password;
+        if ($password != null) {
+            $password = Hash::make($request->password);
+        }
+        else{
+            $user = User::find($id);
+            $password = $user->password;
+        }
+        
+        User::where('id', $id)->update([
+            'name'  => $request->name,
+            'tel_no' => $request->tel_no,
+            'email' => $request->email,
+            'sicil_no' => $request->sicil_no,
+            'author_no' => $request->author_no,
+            'prsnl_no' => $request->prsnl_no,
+            'password' => $password,
+            'adress' => $request->adress
+        ]);
+        return redirect()->route('show.personnelList');
+    }
 
     function addPersonnel(Request $request)
     {

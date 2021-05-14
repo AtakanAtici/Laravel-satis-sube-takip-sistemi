@@ -64,7 +64,7 @@ Personel Yönetimi
       </td>
      -->
       <td>
-        <a data-id="{{ $item->id }}" href="{{ route('show.edit.branch', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
+        <a data-id="{{ $item->id }}" href="{{ route('show.edit.personnel', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
       </td>
       <td>
         <a data-id="{{ $item->prsnl_no }}" name="prsnlNo" href="javascript:void(0)" class="delete">

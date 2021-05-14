@@ -52,5 +52,7 @@ Route::prefix('/personel')->group(function ()
 	Route::post('/sil', 'personnelController@delete')->name('delete.personnel');
 	Route::get('/personel-ekle', 'personnelController@showAddNewPersonnel')->name('show.add.personnel');
 	Route::post('/ekle', 'personnelController@addPersonnel')->name('add.personnel');
+	Route::get('/personel-duzenle', 'personnelController@showEdit')->name('show.edit.personnel');
+	Route::post('/duzenle', 'personnelController@edit')->name('edit.personnel');
 });
 

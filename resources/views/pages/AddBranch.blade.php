@@ -74,6 +74,12 @@
 
 @section('js')
 <script>
+    $.ajaxSetup({
+            headers:{
+                'X-CSRF-TOKEN' : $('meta[name="csrf_token"]').attr("content")
+            }
+        });
+
 	$('#btnSave').click(function () {
            let branchName = document.querySelector('#branchName').value;
            let authorName = document.querySelector('#authorName').value;
@@ -168,6 +174,18 @@
            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
            return regex.test(email);
        		}
+        });
+  $('#btnCancel').click(function () {
+            Swal.fire({
+                title: "Emin Misiniz?",
+                text:" Yaptığınız Değişiklikler kaybolacak",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '<a class="text-white" style="text-decoration:none" href="{{ route('show.branchList') }}">Evet</a> ',
+                cancelButtonText: 'Hayır'
+            })
         });
 </script>
 @endsection

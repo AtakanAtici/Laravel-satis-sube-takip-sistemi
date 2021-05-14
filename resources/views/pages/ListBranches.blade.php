@@ -42,7 +42,9 @@
       <td>{{ Str::limit($item->adress, 20) }}</td>
       <td>{{ $item->author_name }}</td>
       <td><a href="tel:{{ $item->author_tel }}">{{ $item->author_tel }}</a></td>
-      <td><a href="#"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a></td>
+      <td>
+        <a data-id="{{ $item->id }}" href="{{ route('show.edit.branch', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
+      </td>
       <td>
         <a data-id="{{ $item->branch_no }}" name="branchNo" href="javascript:void(0)" class="delete">
           <img class="btnImg" src="{{ asset('img/icons/delete.png') }}">

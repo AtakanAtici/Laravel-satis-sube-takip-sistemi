@@ -42,5 +42,7 @@ Route::prefix('/subeler')->group(function ()
 	Route::get('/yeni-sube-ekle', 'branchController@addNewBranchShow')->name('show.add.branch');
 	Route::post('/sube-ekle', 'branchController@addNewBranch')->name('add.branch');
 	Route::post('/sil', 'branchController@deleteBranch')->name('delete.branch');
+	Route::get('/sube-duzenle', 'branchController@showEdit')->name('show.edit.branch');
+	Route::post('/duzenle' ,'branchController@edit')->name('edit.branch');
 });
 

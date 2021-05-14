@@ -19,6 +19,12 @@ class branchController extends Controller
 
     	return view('pages.AddBranch', compact('branchNo'));
     }
+    function showEdit(Request $request)
+    {
+        $id = $request->id;
+        $branchInfo = Branch::find($id);
+        return view('pages.EditBranch', compact('branchInfo'));
+    }
 
     function addNewBranch(Request $request)
     {
@@ -45,6 +51,21 @@ class branchController extends Controller
         return response()->json([], 200);
     }
 
+    function edit(Request $request)
+    {
+        $id = $request->id;
+        Branch::where('id', $id)->update([
+            'name'  => $request->name,
+            'author_name' => $request->author_name,
+            'tel_no' => $request->tel_no,
+            'author_tel' => $request->author_tel,
+            'email' => $request->email,
+            'start_date' => $request->start_date,
+            'branch_no' => $request->branch_no,
+            'adress' => $request->adress
+        ]);
+        return redirect()->route('show.branchList');
+    }
 
 
 

@@ -49,5 +49,6 @@ Route::prefix('/subeler')->group(function ()
 Route::prefix('/personel')->group(function ()
 {
 	Route::get('/', 'personnelController@showList')->name('show.personnelList');
+	Route::post('/sil', 'personnelController@delete')->name('delete.personnel');
 });
 

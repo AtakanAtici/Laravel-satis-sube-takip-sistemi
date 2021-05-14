@@ -65,7 +65,7 @@ Personel Yönetimi
         <a data-id="{{ $item->id }}" href="{{ route('show.edit.branch', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
       </td>
       <td>
-        <a data-id="{{ $item->branch_no }}" name="branchNo" href="javascript:void(0)" class="delete">
+        <a data-id="{{ $item->prsnl_no }}" name="prsnlNo" href="javascript:void(0)" class="delete">
           <img class="btnImg" src="{{ asset('img/icons/delete.png') }}">
         </a>
       </td>
@@ -77,4 +77,55 @@ Personel Yönetimi
 @endsection
 
 @section('js')
+<script>
+   $.ajaxSetup({
+            headers:{
+                'X-CSRF-TOKEN' : $('meta[name="csrf_token"]').attr("content")
+            }
+        });
+  $('.delete').click(function () {
+            let prsnlNo = $(this).attr('data-id');
+            Swal.fire({
+                title: "Emin Misiniz?",
+                text: prsnlNo  + " nolu kullanıcı bilgisini silmek istiyor musunuz?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet',
+                cancelButtonText: 'Hayır'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: "{{ route('delete.personnel') }}",
+                        type: "POST",
+                        async: false,
+                        data: {
+                            prsnlNo : prsnlNo
+                        },
+                        success: function (response)
+                        {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Başarılı',
+                                text: 'Silme İşlemi Başarılı',
+                                confirmButtonText:'Tamam'
+                            });
+                            $("tr#" + prsnlNo).remove();
+                             window.location.reload();
+                        },
+                        eroor: function ()
+                        {
+                            Swal.fire({
+                                icon: 'eroor',
+                                title: 'Başarılı',
+                                text: 'Silme İşlemi Başarısız',
+                                confirmButtonText:'Tamam'
+                            });
+                        }
+                    })
+                }
+            })
+        });
+</script>
 @endsection

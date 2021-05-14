@@ -12,4 +12,10 @@ class personnelController extends Controller
     	$user = User::all();
     	return view('pages.ListPersonnel', compact('user'));
     }
+    public function delete(Request $request)
+    {
+    	$id = $request->prsnlNo;
+    	User::where('prsnl_no', $id)->delete();
+    	return response()->json([], 200);
+    }
 }

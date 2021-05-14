@@ -12,7 +12,9 @@ Personel Yönetimi
 @endsection
 
 @section('btnValue')
+<a href="{{ route('show.add.personnel') }}">
 <button type="button" class="btn btn-success btn-addNew"> Yeni Personel Ekle </button>
+</a>
 @endsection
 
 @section('content')

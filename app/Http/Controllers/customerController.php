@@ -23,6 +23,12 @@ class customerController extends Controller
     {
         return view('pages.AddCustomer');
     }
+    public function showEdit(Request $request)
+    {
+        $id = $request->id;
+        $customer = Customer::find($id);
+        return view('pages.EditCustomer', compact('customer'));
+    }
     public function addCustomer(Request $request)
     {
         $customerNo = $request->customer_no;
@@ -46,6 +52,21 @@ class customerController extends Controller
             Customer::create($addCustomer);
             return redirect()->route('show.customer');
         }
+    }
+
+    public function edit(Request $request)
+    {
+        $id = $request->id;
+        Customer::where('id', $id)->update([
+            'name'       => $request->name,
+            'tel_no'     => $request->tel_no,
+            'email'      => $request->email,
+            'customer_no'=> $request->customer_no,
+            'owner_name' => $request->owner_name,
+            'adress'     => $request->adress,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        return redirect()->route('show.customer');
     }
 
     

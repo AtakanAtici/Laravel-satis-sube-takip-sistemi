@@ -61,4 +61,6 @@ Route::prefix('/musteriler')->group(function (){
 	Route::get('/sil', 'customerController@delete')->name('delete.customer');
 	Route::get('/musteri-ekle', 'customerController@showAdd')->name('show.add.customer');
 	Route::post('/ekle', 'customerController@addCustomer')->name('add.customer');
+	Route::get('/duzenle', 'customerController@showEdit')->name('show.edit.customer');
+	Route::post('/musteri-duzenle', 'customerController@edit')->name('edit.customer');
 });

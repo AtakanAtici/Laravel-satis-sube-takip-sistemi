@@ -43,7 +43,7 @@
       <td><a href="tel:{{ $item->tel_no }}">{{ $item->tel_no }}</a></td>
       <td>{{ $item->email }}</td>
       <td>
-        <a data-id="{{ $item->id }}" href="{{ route('show.edit.branch', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
+        <a data-id="{{ $item->id }}" href="{{ route('show.edit.customer', ['id' =>$item->id]) }}"><img class="btnImg" src="{{ asset('img/icons/edit.png') }}"></a>
       </td>
       <td>
         <a data-id="{{ $item->customer_no }}" name="customerNo" href="javascript:void(0)" class="delete">

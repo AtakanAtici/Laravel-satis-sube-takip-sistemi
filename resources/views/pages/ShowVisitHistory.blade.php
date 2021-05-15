@@ -18,6 +18,7 @@ Tamamlanmış ziyaretler
       <th scope="col" class="t-head-item">Personel e posta</th>
       <th scope="col" class="t-head-item">Açıklama</th>
       <th scope="col" class="t-head-item">Tarih</th>
+      <th scope="col" class="t-head-item">İncele</th>
       
     </tr>
   </thead>
@@ -31,13 +32,13 @@ Tamamlanmış ziyaretler
       <td>{{Str::limit($item->description, 20,'...')}}</td>
       <td>{{ $item->visit_date }}</td>
 
-      <!--
+      
 
-       <td> <a href="{{ route('read.notes', ['id' => $item->id]) }}">
+       <td> <a href="{{ route('show.view.visit', ['id' => $item->id]) }}">
             <img class="btnImg" src="{{ asset('img/icons/read.png') }}">
           </a>
       </td>
-    -->
+  
     </tr>
    @endforeach
   </tbody>

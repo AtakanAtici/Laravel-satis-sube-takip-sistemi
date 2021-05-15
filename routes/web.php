@@ -88,4 +88,5 @@ Route::prefix('/ziyaretler')->group(function(){
 	Route::get('/yapilacak-ziyaretlerim', 'visitController@showMyVisitHistory')->name('show.myVisitHistory');
 	Route::get('/ziyareti-tamamla', 'visitController@showComplete')->name('show.complete.visit');
 	Route::post('/tamamla', 'visitController@complete')->name('complete.visit');
+	Route::get('/incele', 'visitController@showviewVisit')->name('show.view.visit');
 });

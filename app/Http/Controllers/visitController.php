@@ -110,6 +110,7 @@ class visitController extends Controller
     file_put_contents($file, $image_base64);
 
     $id = $request->id;
+
         BranchVisit::where('id', $id)->update([
             'status'       => 1,
             'image'     => $fileName,
@@ -120,5 +121,13 @@ class visitController extends Controller
         Alert::success('Başarılı', 'Ziyareti Tamamladınız.');
         return redirect()->route('hompage');
 
+    }
+    public function showviewVisit(Request $request)
+    {
+        $id = $request->id;
+        $visit = BranchVisit::find($id)->first();
+        $personel = User::where('prsnl_no', '=', $visit->personelID)->first();
+        $branch = Branch::where('branch_no', '=', $visit->branchID)->first();
+        return view('pages.viewVisit', compact('visit', 'personel', 'branch'));
     }
 }

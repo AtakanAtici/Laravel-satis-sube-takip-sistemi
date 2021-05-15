@@ -1,7 +1,7 @@
 @extends('layouts.manage')
 
 @section('title')
-	Görüntüle - 
+	Satış
 @endsection
 
 @section('content')
@@ -71,6 +71,22 @@
 
 					<th>Toplam: ${{$sales->total_price}}</th>
 				</tr>
+
+				<tr class="heading text-center">
+					<td>Açıklama</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr class="item text-center">
+					<td>
+						
+							{{$sales->sales_note}}
+						
+					</td>
+				</tr>
+
 			</table>
 		</div>
 @endsection

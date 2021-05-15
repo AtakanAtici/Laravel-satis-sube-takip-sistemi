@@ -27,7 +27,7 @@ class salesController extends Controller
     	$sales = DB::table('sales')
     	->join('users', 'sales.personelID', '=' , 'users.prsnl_no')
     	->join('customers', 'sales.customerID', '=' , 'customers.customer_no')
-    	->select('customers.name','customers.owner_name','customers.email','customers.adress' ,'sales.product_name', 'sales.piece', 'sales.piece_price', 'sales.total_price', 'sales.id', 'sales.created_at')
+    	->select('customers.name','customers.owner_name','customers.email','customers.adress' ,'sales.product_name', 'sales.piece', 'sales.piece_price', 'sales.total_price', 'sales.id', 'sales.created_at','sales.sales_note')
     	->where('sales.id','=', $id)
     	->first();	
 

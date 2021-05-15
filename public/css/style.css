@@ -207,6 +207,20 @@
     height: 20px;
     margin-left:20%;
 }
+.date{
+    float:right;
+}
+.note_content
+{
+    margin-top:10px;
+}
+.user-info
+{
+    margin-bottom: 10px;
+}
+.subject{
+    margin-top: 10px;
+}
 .invoice-box {
                 max-width: 800px;
                 margin: auto;

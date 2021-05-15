@@ -19,9 +19,11 @@ class notesController extends Controller
     public function readNote(Request $request)
     {
     	$id = $request->note_id;
+    	$note = Notes::where('note_id', '=' , $id)->first();
+        $senderID = $note->senderID;
+        $user = User::where('prsnl_no', '=', $senderID)->first();
 
-    	$note = Notes::where('note_id', '=' , $id)->get();
 
-    	return view('pages.ReadNotes')->with('note', $note);
+    	return view('pages.ReadNotes', compact('note', 'user'));
     }
 }

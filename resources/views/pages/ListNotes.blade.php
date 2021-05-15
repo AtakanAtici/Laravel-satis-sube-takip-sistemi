@@ -13,9 +13,11 @@ Notlar
 
 
 @section('btnValue')
+<!--
 <a href="{{ route('show.add.customer') }}">
 <button type="button" class="btn btn-success btn-addNew"> Yeni Not Ekle </button>
 </a>
+-->
 @endsection
 
 @section('content')

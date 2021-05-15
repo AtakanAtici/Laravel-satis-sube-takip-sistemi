@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-md-8 text-center">
                     <h3 class="info-name">Toplam Satış</h3>
-                    <span class="info-text">200</span>
+                    <span class="info-text">{{$sum['sale']}}</span>
                 </div>
             </div>
             <div class="row hompage-info-footer">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-md-8 text-center">
                     <h3 class="info-name">Şube Ziyareti</h3>
-                    <span class="info-text">300</span>
+                    <span class="info-text">{{$sum['visit']}}</span>
                 </div>
             </div>
             <div class="row hompage-info-footer">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-md-8 text-center ">
                     <h3 class="info-name">Müşteri Sayısı</h3>
-                    <span class="info-text">200</span>
+                    <span class="info-text">{{$sum['customer']}}</span>
                 </div>
             </div>
             <div class="row hompage-info-footer">
@@ -179,7 +179,7 @@
 @stop
 
 @section('contentforstaff')
- <!-- Bildirim -->
+ <!-- Bildirim 
 <div class="container mt-4"> 
   <div class="alert alert-primary d-flex align-items-center" role="alert">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16">
@@ -190,6 +190,7 @@
   </div>
 </div>
 </div>
+-->
   <!-- Main -->
 <section class="container-fluid transactions ">
   <!-- Şube Ziyaretleri -->

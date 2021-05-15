@@ -7,6 +7,9 @@ use App\Models\User;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Company;
+use App\Models\Sales;
+use App\Models\BranchVisit;
+use App\Models\Customer;
 
 class homeController extends Controller
 {
@@ -28,7 +31,11 @@ class homeController extends Controller
             }
             else
             {
-                return view('hompage');
+                $sumSale = Sales::count();
+                $sumVisit = BranchVisit::count();
+                $sumCustomer = Customer::count();
+                $sum = ['sale' => $sumSale, 'visit' => $sumVisit, 'customer' => $sumCustomer ];
+                return view('hompage', compact('sum') );
             }
         }
         

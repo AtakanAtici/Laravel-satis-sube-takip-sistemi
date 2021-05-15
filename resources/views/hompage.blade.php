@@ -235,7 +235,7 @@
     <div class="row tr-list shadow container-fluid d-flex justify-content-center">
       <!-- Satış Bilgileri -->
       <div class="col-md-3 tr-list-item shadow">
-       <a style="text-decoration:none" href="#">
+       <a style="text-decoration:none" href="{{ route('show.add.sale') }}">
        <div class="row">
           <div class="col-md-4 text-center tr-list-item-image">
             <img width="68" height="68" src="{{ asset('img/icons/add-file.png' )}}" alt="Satış Bilgileri">

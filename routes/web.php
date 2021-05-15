@@ -73,4 +73,6 @@ Route::prefix('/notlar')->group(function (){
 Route::prefix('/satislar')->group(function (){
 	Route::get('/', 'salesController@showSales')->name('show.sales');
 	Route::get('/goruntule', 'salesController@showSale')->name('show.sale');
+	Route::get('/yeni-satis-ekle', 'salesController@showAdd')->name('show.add.sale');
+	Route::post('/ekle', 'salesController@add')->name('add.sale');
 });

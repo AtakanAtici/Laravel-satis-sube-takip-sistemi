@@ -24,6 +24,7 @@ Rol numaraları:
     <title>Optima Şube ve Satış Takip Sistemi</title>
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('sweetAlert/sweetalert2.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
 
@@ -49,6 +50,7 @@ Rol numaraları:
 -->
    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
    <script src="{{asset('js/app.js')}}" defer></script>
+   <script src="{{asset('sweetAlert/sweetalert2.js')}}" defer></script>
 
    
 </body>

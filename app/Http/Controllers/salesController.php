@@ -7,6 +7,8 @@ use App\Models\Sales;
 use App\Models\User;
 use App\Models\Customer;
 use DB;
+use Auth;
+use RealRashid\SweetAlert\Facades\Alert; 
 
 class salesController extends Controller
 {
@@ -30,5 +32,28 @@ class salesController extends Controller
     	->first();	
 
     	return view('pages.showSale', compact('sales'));
+    }
+
+    public function showAdd()
+    {
+    	$id = Auth::id();
+    	$user = User::find($id);
+    	$customer = Customer::all();
+    	return view('pages.AddSale', compact('customer','user'));
+    }
+    public function add(Request $request)
+    {
+    	 $addSale = [
+                'customerID'  => $request->customerID,
+                'personelID'  => $request->personelID,
+                'product_name'=> $request->product_name,
+                'piece'       => $request->piece,
+                'piece_price' => $request->piece_price,
+                'sales_note'  => $request->sales_note,
+                'total_price' => ($request->piece * $request->piece_price)
+            ];
+            Sales::create($addSale);
+            Alert::success('Başarılı', 'Satış bilgisi başarı ile eklendi');
+            return redirect()->route('hompage');
     }
 }

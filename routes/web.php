@@ -78,3 +78,8 @@ Route::prefix('/satislar')->group(function (){
 	Route::get('/yeni-satis-ekle', 'salesController@showAdd')->name('show.add.sale');
 	Route::post('/ekle', 'salesController@add')->name('add.sale');
 });
+
+Route::prefix('/ziyaretler')->group(function(){
+	Route::get('/ziyaret-ekle', 'visitController@showAdd')->name('show.add.visit');
+	Route::post('/ekle', 'visitController@add')->name('add.visit');
+});

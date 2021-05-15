@@ -10,5 +10,5 @@ class BranchVisit extends Model
     use HasFactory;
 
     protected $table = 'branch_visits';
-    protected $fillable = ['personelID','branchID', 'status', 'image', 'personel_location'];
+    protected $fillable = ['personelID','branchID', 'status', 'image', 'personel_location', 'description', 'visit_date'];
 }

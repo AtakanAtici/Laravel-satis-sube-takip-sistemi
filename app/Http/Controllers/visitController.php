@@ -64,6 +64,19 @@ class visitController extends Controller
         ->get();
 
         return view('pages.showMyVisits', compact('visit'));
-        
+    }
+    public function showMyVisitHistory()
+    {
+        $id = Auth::id();
+        $myPrsnlNo = User::where('id', '=', $id)->first();
+         $visit = DB::table('branch_visits')
+        ->join('users', 'branch_visits.personelID', '=', 'users.prsnl_no')
+        ->join('branches', 'branch_visits.branchID', '=', 'branches.branch_no')
+        ->select('users.name', 'branches.name as b_name', 'branch_visits.visit_date', 'users.email', 'branch_visits.description', 'branch_visits.id', 'branches.adress')
+        ->where('status', '=', 1)
+        ->where('personelID', '=', $myPrsnlNo->prsnl_no)
+        ->get();
+
+        return view('pages.showMyVisitHistory', compact('visit'));
     }
 }

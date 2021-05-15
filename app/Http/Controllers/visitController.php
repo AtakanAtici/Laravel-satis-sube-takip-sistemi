@@ -9,6 +9,7 @@ use App\Models\BranchVisit;
 use RealRashid\SweetAlert\Facades\Alert; 
 use DB;
 use Auth;
+use Stevebauman\Location\Facades\Location;
 
 class visitController extends Controller
 {
@@ -78,5 +79,46 @@ class visitController extends Controller
         ->get();
 
         return view('pages.showMyVisitHistory', compact('visit'));
+    }
+    public function showComplete(Request $request)
+    {
+        $id = $request->id;
+        $visit = BranchVisit::find($id);
+        return view('pages.CompleteVisit', compact('visit'));
+    }
+    public function complete(Request $request)
+    {
+        $location = null;
+        // Lokasyon
+        if ($position = Location::get()) {
+            $location = $position->regionName." " . $position->cityName ." ". $position->countryName;
+
+        } else {
+            dd('Konum Bilgisi Alınamadı');
+        }
+    $img = $request->image;
+    $folderPath = public_path('img/visit/');
+  
+    $image_parts = explode(";base64,", $img);
+    $image_type_aux = explode("image/", $image_parts[0]);
+    $image_type = $image_type_aux[1];
+  
+    $image_base64 = base64_decode($image_parts[1]);
+    $fileName = uniqid() . '.png';
+  
+    $file = $folderPath . $fileName;
+    file_put_contents($file, $image_base64);
+
+    $id = $request->id;
+        BranchVisit::where('id', $id)->update([
+            'status'       => 1,
+            'image'     => $fileName,
+            'updated_at' => date('Y-m-d H:i:s'),
+            'description' => $request->description,
+            'personel_location' => $location
+        ]);
+        Alert::success('Başarılı', 'Ziyareti Tamamladınız.');
+        return redirect()->route('hompage');
+
     }
 }

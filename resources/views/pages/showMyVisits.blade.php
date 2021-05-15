@@ -31,7 +31,7 @@ Ziyaretlerim
 
      
 
-       <td> <a href="{{ route('read.notes', ['id' => $item->id]) }}">
+       <td> <a href="{{ route('show.complete.visit', ['id' => $item->id]) }}">
             <img class="btnImg" src="{{ asset('img/icons/read.png') }}">
           </a>
       </td>

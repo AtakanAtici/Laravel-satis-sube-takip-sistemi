@@ -221,6 +221,16 @@
 .subject{
     margin-top: 10px;
 }
+.camera{
+    margin-left: 0px;
+    margin: 0;
+    padding: 0;
+    margin-left: -2%;
+}
+.photo{
+    margin-left:50px;
+
+}
 .invoice-box {
                 max-width: 800px;
                 margin: auto;
@@ -298,7 +308,13 @@
                     display: block;
                     text-align: center;
                 }
-            }
+                .photo{
+                        margin-left:0px;
+                    }
+                    .camera{
+                        margin-left:0px;
+                    }
+}
 @media only screen and (max-width: 1000px)
 {
     .settings{
@@ -319,6 +335,9 @@
     .tr-list-item-name{
         padding-bottom:5px;
     }
+    .camera{
+      margin-left:0px;
+    }
 }
 @media only screen and (max-width: 900px)
 {
@@ -333,5 +352,8 @@
     .tr-list-item:hover .tr-list-item-image{
         margin-top:0px;
     }
+    .camera{
+                        margin-left:0px;
+                    }
     
 }

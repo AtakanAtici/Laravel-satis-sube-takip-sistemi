@@ -68,6 +68,8 @@ Route::prefix('/musteriler')->group(function (){
 Route::prefix('/notlar')->group(function (){
 	Route::get('/', 'notesController@showNotes')->name('show.notes');
 	Route::get('/oku', 'notesController@readNote')->name('read.notes');
+	Route::get('/yeni-not-ekle', 'notesController@showAdd')->name('show.add.note');
+	Route::post('/ekle', 'notesController@add')->name('add.note');
 });
 
 Route::prefix('/satislar')->group(function (){

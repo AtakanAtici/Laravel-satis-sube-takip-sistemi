@@ -261,7 +261,7 @@
       </div>
       <!-- Personeller -->
       <div class="col-md-3 tr-list-item shadow">
-       <a style="text-decoration:none" href="#">
+       <a style="text-decoration:none" href="{{ route('show.add.note') }}">
        <div class="row">
           <div class="col-md-4 text-center tr-list-item-image">
             <img width="68" height="68" src="{{ asset('img/icons/add(note).png' )}}" alt="Satış Bilgileri">

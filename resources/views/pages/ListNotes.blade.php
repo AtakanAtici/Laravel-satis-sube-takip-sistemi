@@ -1,3 +1,4 @@
+<?php use Illuminate\Support\Str; ?>
 @extends('layouts.manage')
 
 @section('title')
@@ -37,12 +38,12 @@ Notlar
   	@foreach($notes as $item)
     
     	@php
-    	if($item->to_roleID == $myRole->author_no)
+    	if($item->to_roleID == $myRole->author_no || $item->to_roleID == 0)
     	{	@endphp
     		<tr>
     		<th scope="row">{{ $item->name }}</th>
-		      <td>{{ $item->subject }}</td>
-          <td>{{ $item->note }}</td>
+		      <td>{{ Str::limit($item->subject,20 , '...') }}</td>
+          <td>{{ Str::limit($item->note,30 , '...') }}</td>
 		      <td>{{ $item->created_at }}</td>
 		      <td> <a href="{{ route('read.notes', ['note_id' => $item->note_id]) }}">
 		      	<img class="btnImg" src="{{ asset('img/icons/read.png') }}">

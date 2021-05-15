@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Notes;
 use App\Models\User;
 use Auth;
+use RealRashid\SweetAlert\Facades\Alert; 
 
 class notesController extends Controller
 {
@@ -25,5 +26,23 @@ class notesController extends Controller
 
 
     	return view('pages.ReadNotes', compact('note', 'user'));
+    }
+    public function showAdd()
+    {
+        $myID = Auth::id();
+        $me = User::where('id', '=', $myID)->first();
+        return view('pages.AddNote', compact('me'));
+    }
+    public function add(Request $request)
+    {
+        $addNote = [
+                'senderID' => $request->senderID,
+                'subject'    => $request->subject,
+                'to_roleID'  => $request->to_roleID,
+                'note'       => $request->note
+            ];
+            Notes::create($addNote);
+            Alert::success('Başarılı', 'Not Gönderildi');
+            return redirect()->route('hompage');
     }
 }

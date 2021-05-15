@@ -70,6 +70,7 @@ Route::prefix('/notlar')->group(function (){
 	Route::get('/oku', 'notesController@readNote')->name('read.notes');
 });
 
-Route::prefix('/satıslar')->group(function (){
+Route::prefix('/satislar')->group(function (){
 	Route::get('/', 'salesController@showSales')->name('show.sales');
+	Route::get('/goruntule', 'salesController@showSale')->name('show.sale');
 });

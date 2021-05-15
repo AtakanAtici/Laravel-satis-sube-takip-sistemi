@@ -83,4 +83,5 @@ Route::prefix('/ziyaretler')->group(function(){
 	Route::get('/ziyaret-ekle', 'visitController@showAdd')->name('show.add.visit');
 	Route::post('/ekle', 'visitController@add')->name('add.visit');
 	Route::get('/aktif-ziyaretler', 'visitController@showVisit')->name('show.visit');
+	Route::get('/gecmis-ziyaretler', 'visitController@showVisitHistory')->name('show.visit.history');
 });

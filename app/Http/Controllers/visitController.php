@@ -8,6 +8,7 @@ use App\Models\Branch;
 use App\Models\BranchVisit;
 use RealRashid\SweetAlert\Facades\Alert; 
 use DB;
+use Auth;
 
 class visitController extends Controller
 {
@@ -49,5 +50,20 @@ class visitController extends Controller
         ->where('status', '=', 1)
         ->get();
         return view('pages.ShowVisitHistory', compact('visit'));
+    }
+    public function showMyVisits()
+    {
+        $id = Auth::id();
+        $myPrsnlNo = User::where('id', '=', $id)->first();
+         $visit = DB::table('branch_visits')
+        ->join('users', 'branch_visits.personelID', '=', 'users.prsnl_no')
+        ->join('branches', 'branch_visits.branchID', '=', 'branches.branch_no')
+        ->select('users.name', 'branches.name as b_name', 'branch_visits.visit_date', 'users.email', 'branch_visits.description', 'branch_visits.id', 'branches.adress')
+        ->where('status', '=', 0)
+        ->where('personelID', '=', $myPrsnlNo->prsnl_no)
+        ->get();
+
+        return view('pages.showMyVisits', compact('visit'));
+        
     }
 }

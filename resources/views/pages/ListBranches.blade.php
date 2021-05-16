@@ -38,8 +38,8 @@
     
   	@foreach($list as $item)
     <tr>
-      <td>{{ $item->branch_no }}</td>
-      <th scope="row">{{ $item->name }}</th>
+      <th>{{ $item->branch_no }}</td>
+      <td>{{ $item->name }}</th>
 
       <td><a href="tel:{{ $item->tel_no }}">{{ $item->tel_no }}</a></td>
       <td>{{ Str::limit($item->adress, 20) }}</td>

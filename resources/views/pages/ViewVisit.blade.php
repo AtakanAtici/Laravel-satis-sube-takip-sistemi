@@ -15,7 +15,7 @@
 							<tr>
 								<td class="title">
 									
-									<img src="{{asset('img/visit/'.$visit->image)}}" alt="Riyaret Resmi" style="width: 100%; max-width: 300px" />
+									<img src="{{asset('img/visit/'.$visit->image)}}" alt="Ziyaret Resmi" style="width: 100%; max-width: 300px" />
 								</td>
 								
 								<td>

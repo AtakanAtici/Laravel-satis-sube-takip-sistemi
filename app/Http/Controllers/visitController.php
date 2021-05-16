@@ -125,7 +125,7 @@ class visitController extends Controller
     public function showviewVisit(Request $request)
     {
         $id = $request->id;
-        $visit = BranchVisit::find($id)->first();
+        $visit = BranchVisit::where('id', $id)->first();
         $personel = User::where('prsnl_no', '=', $visit->personelID)->first();
         $branch = Branch::where('branch_no', '=', $visit->branchID)->first();
         return view('pages.viewVisit', compact('visit', 'personel', 'branch'));

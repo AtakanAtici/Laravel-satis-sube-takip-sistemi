@@ -46,7 +46,8 @@ class setupController extends Controller
                 'name'  =>'required|string',
                 'email' =>'required|string',
                 'tel_no'=>'required|string',
-                'password' => 'required|string'
+                'password' => 'required|string',
+                'prsnl_no' => 'PRSNL-01'
             ]
         );
 

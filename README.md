@@ -3,11 +3,18 @@
 İşletmelerin yapılan satış bilgilerini ve şube ziyaretlerini kolaylıkla kayıt altına almasını ve takip etmesini sağlayan web tabanlı çözüm.
 
 # Kurulum
+**Cpanel kurulum**
+
 !webcamjs'in çalışabilmesi için HTTPS gerekli
 - Dosyaları FTP sunucunuza yükleyin,
 - Ana dizinde .htaccess dosyasının olduğundan emin olun,
 - Cpanel'de veritabanı oluşturduktan sonra .env dosyasına veritabanı bilgilerini girin ve database.sql dosyasını içe aktarın,
 - Cpanel'deki Uzak MYSQL kısmında local ip adresi(127.0.0.1)'nin tanımlı olduğundan emin olun.
+
+**Localhost kurulum**
+- Ana dizindeki .htaccess dosyasını silin,
+- Phpmyadmin'e database.sql dosyasını yükleyin ve .env dosyasına veritabanı bilgilerini girin,
+- ```php artisan serve``` komutunu çalıştırarak projeyi başlatın.
 
 # Kullanılan Teknolojiler
 - PHP 8

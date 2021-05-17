@@ -12,6 +12,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class salesController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     public function showSales()
     {
     	$sales = DB::table('sales')

@@ -10,6 +10,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class notesController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     public function showNotes()
     {
     	$myid = Auth::id();

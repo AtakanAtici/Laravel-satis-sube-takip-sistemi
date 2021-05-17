@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
+use Auth;
 
 class personnelController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     public function showList()
     {
     	$user = User::all();

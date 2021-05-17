@@ -5,13 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use RealRashid\SweetAlert\Facades\Alert;    
+use App\Models\Company;
+use Auth;
 
 class customerController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
+
     public function showCustomer()
     {
-    	$customer = Customer::all();
-    	return view('pages.ListCustomer', compact('customer'));
+        
+    $customer = Customer::all();
+    return view('pages.ListCustomer', compact('customer'));
+         
     }
      function delete(Request $request)
     {

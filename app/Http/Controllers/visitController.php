@@ -13,6 +13,10 @@ use Stevebauman\Location\Facades\Location;
 
 class visitController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     public function showAdd()
     {
     	$personel = User::where('author_no', '=', '2')->get();

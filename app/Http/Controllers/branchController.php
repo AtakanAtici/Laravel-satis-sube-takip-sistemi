@@ -5,13 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Branch;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Company;
+use Auth;
 
 class branchController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
     public function showBranches()
     {
-    	$list = Branch::all();
-    	return view('pages.ListBranches', compact('list')); 
+        
+    $list = Branch::all();
+    return view('pages.ListBranches', compact('list')); 
+         
     }
     function addNewBranchShow()
     {

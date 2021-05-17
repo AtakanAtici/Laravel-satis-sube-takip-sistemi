@@ -207,7 +207,7 @@
             <img width="68" height="68" src="{{ asset('img/icons/visitor.png' )}}" alt="Yapılacak ziyaretler">
           </div>
           <div class="col-md-8 tr-list-item-name">
-            <span>Yapılacak Ziyaretler</span>
+            <span>Ziyaretlerim</span>
           </div>
         </div>
        </a>
@@ -220,7 +220,7 @@
             <img width="68" height="68" src="{{ asset('img/icons/history2.png' )}}" alt="Yapılacak ziyaretler">
           </div>
           <div class="col-md-8 tr-list-item-name">
-            <span>Geçmiş Ziyaretlerim</span>
+            <span>Geçmiş Ziyaretler</span>
           </div>
         </div>
        </a>

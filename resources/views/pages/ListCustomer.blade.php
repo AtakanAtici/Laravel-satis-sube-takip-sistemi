@@ -10,7 +10,7 @@
 @endsection
 
 @section('headLine')
-	Müşteri Yönetimi
+	Müşteriler
 @endsection
 
 @section('btnValue')

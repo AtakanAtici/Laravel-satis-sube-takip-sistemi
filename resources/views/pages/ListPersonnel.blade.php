@@ -1,14 +1,14 @@
 @extends('layouts.manage')
 
 @section('title')
-Personeller
+Personel Yönetmi
 @endsection
 
 @section('css')
 @endsection
 
 @section('headLine')
-Personel Yönetimi
+Personeller
 @endsection
 
 @section('btnValue')

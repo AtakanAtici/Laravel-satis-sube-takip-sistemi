@@ -4,6 +4,10 @@
 Satış Bilgileri
 @endsection
 
+@section('headLine')
+Satış Bilgileri
+@endsection
+
 @section('css')
 @endsection
 

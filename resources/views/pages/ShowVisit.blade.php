@@ -5,7 +5,7 @@ Aktif Ziyaretler
 @endsection
 
 @section('headLine')
-Yapılmayı beklenen ziyaretler
+Yapılmayı bekleyen ziyaretler
 @endsection
 
 @section('content')

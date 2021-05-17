@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="row hompage-info-footer">
-                <a class="text-center " href="#"> <span>Satış bilgileri</span></a>
+                <a class="text-center " href="{{ route('show.sales') }}"> <span>Satış bilgileri</span></a>
             </div>
         </div>
         <!-- Yapılan Ziyaret Sayısı -->
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="row hompage-info-footer">
-                <a class="text-center " href="#"> <span>Ziyaret Yönetimi</span></a>
+                <a class="text-center " href="{{route('show.visit.history')}}"> <span>Ziyaret Yönetimi</span></a>
             </div>
         </div>
         <!-- Müşteri Sayısı -->
@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="row hompage-info-footer">
-                <a class="text-center " href="#"> <span>Müşteri Yönetimi</span></a>
+                <a class="text-center " href="{{ route('show.customer') }}"> <span>Müşteri Yönetimi</span></a>
             </div>
         </div>
     </div>

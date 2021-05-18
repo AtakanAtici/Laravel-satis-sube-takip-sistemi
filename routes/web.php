@@ -90,3 +90,6 @@ Route::prefix('/ziyaretler')->group(function(){
 	Route::post('/tamamla', 'visitController@complete')->name('complete.visit');
 	Route::get('/incele', 'visitController@showviewVisit')->name('show.view.visit');
 });
+
+//Logs
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

@@ -132,6 +132,6 @@ class visitController extends Controller
         $visit = BranchVisit::where('id', $id)->first();
         $personel = User::where('prsnl_no', '=', $visit->personelID)->first();
         $branch = Branch::where('branch_no', '=', $visit->branchID)->first();
-        return view('pages.viewVisit', compact('visit', 'personel', 'branch'));
+        return view('pages.ViewVisit', compact('visit', 'personel', 'branch'));
     }
 }

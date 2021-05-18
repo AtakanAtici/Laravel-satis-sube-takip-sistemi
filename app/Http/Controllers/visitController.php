@@ -88,18 +88,11 @@ class visitController extends Controller
     {
         $id = $request->id;
         $visit = BranchVisit::find($id);
-        return view('pages.CompleteVisit', compact('visit'));
+        $branch = Branch::where('branch_no', '=', $visit->branchID)->first();
+        return view('pages.CompleteVisit', compact('visit', 'branch'));
     }
     public function complete(Request $request)
-    {
-        $location = null;
-        // Lokasyon
-        if ($position = Location::get()) {
-            $location = $position->regionName." " . $position->cityName ." ". $position->countryName;
-
-        } else {
-            dd('Konum Bilgisi Alınamadı');
-        }
+    {  
     $img = $request->image;
     $folderPath = public_path('img/visit/');
   
@@ -115,15 +108,24 @@ class visitController extends Controller
 
     $id = $request->id;
 
-        BranchVisit::where('id', $id)->update([
+        $update = BranchVisit::where('id', $id)->update([
             'status'       => 1,
             'image'     => $fileName,
             'updated_at' => date('Y-m-d H:i:s'),
             'description' => $request->description,
-            'personel_location' => $location
+            'latitude' => $request->enlem,
+            'longitude' => $request->boylam
         ]);
-        Alert::success('Başarılı', 'Ziyareti Tamamladınız.');
+        if($update)
+        {
+            Alert::success('Başarılı', 'Ziyareti Tamamladınız.');
+            return redirect()->route('hompage');
+        }
+        else{
+            Alert::error('Hata', 'İşlem gerçekleşemedi.');
         return redirect()->route('hompage');
+        }
+        
 
     }
     public function showviewVisit(Request $request)

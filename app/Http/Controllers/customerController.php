@@ -17,10 +17,8 @@ class customerController extends Controller
 
     public function showCustomer()
     {
-        
     $customer = Customer::all();
-    return view('pages.ListCustomer', compact('customer'));
-         
+    return view('pages.ListCustomer', compact('customer')); 
     }
      function delete(Request $request)
     {

@@ -91,5 +91,3 @@ Route::prefix('/ziyaretler')->group(function(){
 	Route::get('/incele', 'visitController@showviewVisit')->name('show.view.visit');
 });
 
-//Logs
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

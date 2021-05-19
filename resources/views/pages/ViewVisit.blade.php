@@ -85,14 +85,6 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWSpUZJzzOt8nfCsA7bewYE5ApFogS-Fs&callback=initMap"
   type="text/javascript"></script>
 <script>
-  function konumuGetir() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(konumuGoster, hataGoster);
-    } else {
-      document.write("Tarayıcınız Geolocation API desteklemiyor.");
-    }
-  }
-
   function konumuGoster(konum) {
     enlem = document.getElementById('enlem').value;
     boylam = document.getElementById('boylam').value;

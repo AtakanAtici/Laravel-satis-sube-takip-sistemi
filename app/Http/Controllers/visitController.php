@@ -131,9 +131,18 @@ class visitController extends Controller
     public function showviewVisit(Request $request)
     {
         $id = $request->id;
+        
         $visit = BranchVisit::where('id', $id)->first();
+        if($visit == null)
+        {
+            Alert::error('Hata', 'Ziyaret bilgisi silinmiş veya değiştirilmiş.');
+            return redirect()->route('hompage');
+        }
+       else
+       {
         $personel = User::where('prsnl_no', '=', $visit->personelID)->first();
         $branch = Branch::where('branch_no', '=', $visit->branchID)->first();
         return view('pages.ViewVisit', compact('visit', 'personel', 'branch'));
+       }
     }
 }

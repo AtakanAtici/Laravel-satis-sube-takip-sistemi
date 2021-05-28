@@ -16,15 +16,12 @@ class branchController extends Controller
     }
     public function showBranches()
     {
-        
     $list = Branch::all();
-    return view('pages.ListBranches', compact('list')); 
-         
+    return view('pages.ListBranches', compact('list'));    
     }
     function addNewBranchShow()
     {
 		$branchNo = rand();
-
     	return view('pages.AddBranch', compact('branchNo'));
     }
     function showEdit(Request $request)
@@ -36,7 +33,6 @@ class branchController extends Controller
 
     function addNewBranch(Request $request)
     {
-
     	$AddBranch = [
     		'name' => $request->name,
     		'author_name' => $request->author_name,
@@ -48,8 +44,15 @@ class branchController extends Controller
     		'adress' => $request->adress
     	];
 
-    	Branch::create($AddBranch);
-    	return redirect('/subeler/');
+    	$add = Branch::create($AddBranch);
+        if ($add) {
+            return redirect('/subeler/');
+        }
+        else{
+            Alert::warning('Hata!', 'Beklenmedik bir hata oluştu');
+            return redirect('/giris-yap');
+        }
+    	
     }
 
     function deleteBranch(Request $request)

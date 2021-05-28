@@ -61,18 +61,18 @@
     margin: 10px;
 }
 .login-header-text{
-    color: #000;
+    color: #fff;
     font-size: 28px;
     font-family: "Apple Color Emoji";
+    text-align: center;
 }
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
+  max-width: 530px;
   padding: 15px;
   margin: auto;
-  background-color: #f5f5f5;
-  border-radius: 6px;
+  margin-top: 30%;
 }
 
 
@@ -284,6 +284,24 @@
     border-top: 2px solid #eee;
     font-weight: bold;
 }
+.loginpageImg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-top: 30%;
+}
+.loginpage{
+    padding: 0;
+    margin: 0;
+}
+.login-image-alt{
+    color: #fff;
+    text-align: center;
+}
+.login-image-alt a{
+    color: lightblue;
+}
 
 @media only screen and (max-width: 600px) {
 
@@ -291,6 +309,9 @@
     width: 100%;
     display: block;
     text-align: center;
+}
+.loginpageImg{
+    margin-top: 0px;
 }
 
 .invoice-box table tr.information table td {
@@ -346,7 +367,15 @@
         margin-top:0px;
     }
     .camera{
-                        margin-left:0px;
-                    }
-    
+    margin-left:0px;
+    }
+    .loginpageImg{
+    padding-top: 0px;
+    }
+    .loginpageContent{
+        margin-top: -10%;
+    }
+    .login-header-text{
+        display: none;
+    }
 }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('sweetAlert/sweetalert2.css')}}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+<!--
     <style>
       html,
 body {
@@ -25,15 +25,32 @@ body {
   background-image: url('{{asset('img/background-setup.png')}}');
 }
     </style>
-
+-->
+<style>
+    body{
+      background: rgb(0,22,66);
+background: linear-gradient(90deg, rgba(0,22,66,1) 0%, rgba(0,46,138,1) 100%);
+    }
+</style>
 </head>
-<body class="text-center">
+<body >
 @include('sweetalert::alert')
-   <main class="form-signin shadow">
+
+
+<div class="loginpage row">
+    <div class="col-md-6">
+        <img class="loginpageImg"  height="100%" src="{{asset('img/logo.png')}}">
+        <span class="login-image-alt">
+            <p>
+            Daha fazla bilgi almak için <a href="#">optima.com</a>'u ziyaret edin. <br>
+            </p>
+        </span>
+    </div>
+    <div class="loginpageContent col-md-6">
+         <main class="form-signin shadow">
      <form method="POST" id="formLogin" action="{{ route('login') }}">
      @csrf
-       <img width="64" src="{{asset('img/rocket.png')}}">
-       <h1 class="h3 mb-3 fw-normal login-header-text">Giriş Yap</h1>
+       <h1 class="h2 mb-3 fw-normal login-header-text">Giriş Yap</h1>
         <div class="form-floating">
         <input name="email" type="email" class="form-control" id="email" placeholder="E-posta adresiniz" >
        <label  for="floatingPassword">E posta</label>
@@ -45,7 +62,7 @@ body {
         
          <div style="margin-bottom: 10px" class="form-check">
               <input class="form-check-input" name="remember" type="checkbox" id="flexCheckDefault">
-              <label style="float:left; " class="form-check-label" for="flexCheckDefault">
+              <label style="float:left; color: #fff;" class="form-check-label" for="flexCheckDefault">
                Beni hatırla
               </label>
           </div>
@@ -54,6 +71,15 @@ body {
 
      </form>
    </main>
+    </div>
+</div>
+
+
+
+
+  <!-- 
+    
+  -->
 
    <script src="{{asset('bootstrap/js/bootstrap.js')}}"></script>
    <script src="{{asset('js/app.js')}}" defer></script>

@@ -2,8 +2,6 @@
 
 İşletmelerin yapılan satış bilgilerini ve şube ziyaretlerini kolaylıkla kayıt altına almasını ve takip etmesini sağlayan web tabanlı çözüm.
 
-Sayfa tasarımları : https://www.figma.com/file/BohirEZddgnt54x1S9xkkd/m%C3%BC%C5%9Fteri-personel-%C5%9Fube-takip?node-id=0%3A1
-
 # Kurulum
 **Cpanel kurulum**
 
